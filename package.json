@@ -1,0 +1,34 @@
+{
+  "name": "syncme",
+  "version": "0.0.0",
+  "main": "lib/syncme.js",
+  "description": "Ease syncing files in between two machines with Rsync",
+  "homepage": "https://github.com/garryyao/syncme",
+  "bugs": "https://github.com/garryyao/syncme/issues",
+  "author": {
+    "name": "Garry Yao",
+    "email": "yaojun85@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garryyao/syncme"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "syncme",
+    "rsync backup "
+  ],
+  "bin": {
+    "syncme": "cli.js"
+  },
+  "preferGlobal": "true",
+  "dependencies": {
+    "expand-home-dir": "0.0.2",
+    "findup-sync": "^0.1.3",
+    "mustache": "^0.8.2",
+    "shelljs": "^0.3.0"
+  }
+}
