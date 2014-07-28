@@ -34,7 +34,7 @@ rd.on('line', function(file) {
 
   file = tilde(file).replace(/\s+/g, '\\$&');
   var cmd = format(
-    "rsync -auzhi --progress --omit-dir-times --no-o --rsync-path='sudo rsync'" +
+    "rsync -auzhio --progress --omit-dir-times --rsync-path='sudo rsync'" +
     " {{#exclude}} --exclude= {{exclude}}{{/exclude}} {{&src}} {{host}}:'{{&dest}}'",
     {
       exclude: '',
