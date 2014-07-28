@@ -29,9 +29,13 @@ var rd = readline.createInterface({
 });
 
 rd.on('line', function(file) {
+  if(!file.trim())
+    return;
+
   file = tilde(file).replace(/\s+/g, '\\$&');
   var cmd = format(
-    "rsync -vazu {{#exclude}} --exclude= {{exclude}}{{/exclude}} {{&src}} {{host}}:'{{&dest}}'",
+    "rsync -auzhi --progress --omit-dir-times --no-o --rsync-path='sudo rsync'" +
+    " {{#exclude}} --exclude= {{exclude}}{{/exclude}} {{&src}} {{host}}:'{{&dest}}'",
     {
       exclude: '',
       host: host,
